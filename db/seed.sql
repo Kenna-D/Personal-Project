@@ -1,0 +1,29 @@
+DROP TABLE IF EXISTS love_your_shelf_users;
+DROP TABLE IF EXISTS love_your_shelf_ordered_products;
+DROP TABLE IF EXISTS love_your_shelf_products;
+
+CREATE TABLE love_your_shelf_users (
+  user_id SERIAL PRIMARY KEY,
+  username VARCHAR(250),
+  hash TEXT,
+  phone_number VARCHAR(12),
+  email VARCHAR(150),
+  is_admin BOOLEAN
+);
+
+CREATE TABLE love_your_shelf_products(
+    product_id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    group_id INTEGER,
+    image TEXT,
+    price INTEGER,
+    details TEXT
+);
+
+CREATE TABLE love_your_shelf_ordered_products (
+    ordered_products_id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES love_your_shelf_users(user_id),
+    product_id INTEGER REFERENCES love_your_shelf_products(product_id),
+    delivery_location VARCHAR(250),
+    custom_details TEXT
+);
