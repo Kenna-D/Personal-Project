@@ -26,27 +26,27 @@ module.exports = {
   },
   login: async (req, res) => {
     const {username, password} = req.body;
-
+    
     const searchUser = await req.app.get('db').user.search_user_by_username([username]);
     const user = searchUser[0];
 
     if(!user){
       return res.status(409).send('Username / Password is incorrect')
     };
-
-    const isAuthenticated = bcrypt.compareSync(password, user.password);
-
+// console.log(user)
+    const isAuthenticated = bcrypt.compareSync(password, user.hash);
+// console.log(isAuthenticated)
     if(!isAuthenticated){
       return res.status(409).send('Username / Password is incorrect')
     };
 
     console.log(user);
 
-    delete user.password;
+    delete user.hash;
 
     req.session.user = {username: user.username, user_id: user.user_id, phone_number: user.phone_number, email: user.email, is_admin: user.is_admin};
 
-    req.status(200).send(req.session.user);
+    res.status(200).send(req.session.user);
   },
   logout: async (req, res) => {
     req.session.destroy();

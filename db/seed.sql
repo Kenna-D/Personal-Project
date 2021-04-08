@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS love_your_shelf_products;
 CREATE TABLE love_your_shelf_users (
   user_id SERIAL PRIMARY KEY,
   username VARCHAR(250),
-  hash TEXT,
+  hash VARCHAR(250),
   phone_number VARCHAR(12),
   email VARCHAR(150),
   is_admin BOOLEAN
