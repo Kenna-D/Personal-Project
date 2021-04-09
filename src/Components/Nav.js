@@ -14,8 +14,13 @@ class Nav extends Component {
     }
   };
   componentDidMount(){
-    axios.get('api/auth/me')
-      .then(res => updateUser(res.data))
+    // console.log('componentDidMount')
+    axios.get('/api/auth/me')
+      .then(res => {
+        // console.log(res)
+        this.props.updateUser(res.data)
+      })
+     .catch(err => console.log(err))
   };
 
   handleClick = () => {
@@ -30,11 +35,12 @@ class Nav extends Component {
     axios.post('/api/auth/logout')
       .then(res => {
         this.props.history.push('/')
-        this.logout()
+        this.props.logout()
       })
   };
 
   render(){
+    // console.log(this.props)
     return(
       <header>
         <div className="logo">
@@ -50,7 +56,7 @@ class Nav extends Component {
               <Link to='/home' onClick={this.handleClick}><li> Home</li></Link>
               <Link to='/all-products' onClick={this.handleClick}><li> All Products</li></Link>
               <Link to='/cart' onClick={this.handleClick}><li> Your Cart</li></Link>
-              <Link to='/order-history/:id' onClick={this.handleClick}><li> Past Orders</li></Link>
+              <Link to={`/order-history/${this.props.user.user_id}`} onClick={this.handleClick}><li> Past Orders</li></Link>
               <li onClick={this.logout}> Logout</li>
             </ul>
     

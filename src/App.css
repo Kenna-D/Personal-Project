@@ -226,3 +226,19 @@ ul {
   padding: 10px;
   font-size: 17px;
 }
+
+/* Cart */
+.cart{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 10vh;
+}
+
+/* Order History */
+.orderHistory{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 10vh;
+}

@@ -46,7 +46,7 @@ module.exports = {
 
     req.session.user = {username: user.username, user_id: user.user_id, phone_number: user.phone_number, email: user.email, is_admin: user.is_admin};
 
-    res.status(200).send(req.session.user);
+    return res.status(200).send(req.session.user);
   },
   logout: async (req, res) => {
     req.session.destroy();

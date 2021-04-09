@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 
 class AboutUs extends Component {
-
+// 
   render(){
     return(
       <div className='aboutUs'>
@@ -14,7 +14,7 @@ class AboutUs extends Component {
           </h3>
           </div>         
           <div className='aboutUsImage'>
-            <img alt='Father and Son' src='src/images/fatherAndSon.jpeg' className='homeImage'/>      
+            <img alt='Father and Son' src='url' className='homeImage'/>      
           </div>
         </div>
       </div>

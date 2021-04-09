@@ -26,9 +26,9 @@ class Login extends Component {
   login(){
     axios.post('/api/auth/login', this.state)
       .then(res => {
-        this.props.history.push('/home')
-        
         this.getUser()
+        
+        
       })
       .catch(err => {
         console.log(err)
@@ -40,10 +40,13 @@ class Login extends Component {
   getUser = () => {
     axios.get('/api/auth/me')
       .then(res => {
+        console.log('login', res.data)
         const {user_id} = res.data
         const {username} = this.state
         this.props.updateUser({username, user_id})
+        this.props.history.push('/home')
       })
+      .catch(err => console.log(err))
   }
 
 
