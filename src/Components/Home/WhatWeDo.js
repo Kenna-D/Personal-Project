@@ -5,17 +5,20 @@ class WhatWeDo extends Component {
 
   render(){
     return(
-      <div>
-        <div className='whatWeDoImage'>
-          <img alt='A Product' src='url'/>
-          <Link to='all-products' >
-            Shop all products Here
-          </Link>
-        </div>
-        <div className='whatWeDo'>
-          <h3>
-            what we do speach
-          </h3>
+      <div className='whatWeDo'>
+        <h1 className='whatWeDoTitle'>What We Do</h1>
+        <div className='filler' >
+          <div className='whatWeDoImage'>
+            <img alt='A Product' src='url' className='homeImage'/>
+            <Link to='all-products' >
+             <button>Shop all products Here</button>
+            </Link>
+          </div>
+          <div className='whatWeDoText'>
+            <h3>
+              what we do speach
+            </h3>
+          </div>
         </div>
       </div>
     )

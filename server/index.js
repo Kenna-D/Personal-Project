@@ -26,8 +26,9 @@ app.post('/api/auth/login', userCtrl.login);
 app.get('/api/auth/me', userCtrl.getUser);
 app.post('/api/auth/logout', userCtrl.logout);
 
-//Poroducts Endpoints
+//Products Endpoints
 app.get('/api/products', productCtrl.getAll);
+app.get('/api/products/:id', productCtrl.getOne);
 
 //Orders Endpoints
 

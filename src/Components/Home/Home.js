@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import WhatWeDo from './WhatWeDo';
 import AboutUs from './AboutUs';
 
@@ -7,20 +6,12 @@ class Home extends Component {
 
   render(){
     return (
-      <div>
-        <header>
-          <div className="logo">
-            Love Your Shelf
-          </div>
-          <nav className="homeNav">
-            <Link to='/login'>
-              Login
-            </Link>
-            <div>
-              Hamburger Menu
-            </div>
-          </nav>
-        </header>
+      <div className='homePage'>
+        <div className='openingLogo'>
+          <h1>
+            L O V E   Y O U R   S H E L F
+          </h1>
+        </div>
         <WhatWeDo />
         <AboutUs />
       </div>

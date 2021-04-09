@@ -1,1 +1,155 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
+
+/* CSS STARTING POINT */
+
+/* NAV */
+header {
+  height: 10vh;
+  width: 100vw;
+  position: fixed;
+  background-color: #F7882F;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  z-index: 1;
+}
+.logo {
+  position: relative;
+  margin-left: 10px;
+}
+.homeNav {
+  position: absolute;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  width: 100vw;
+  /* right: 0px; */
+  left: 73vw;
+}
+.loginLink{
+  margin-right: 20px;
+}
+.menuIcon{
+  height: 30px;
+  width: 30px;
+  position: relative;
+  right: 0px;
+}
+
+/* Home */
+.homePage{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 2000px;
+  top: 10vh;
+}
+.openingLogo{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 750px;
+  background-color: blue;
+}
+.whatWeDo{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  /* justify-content: center; */
+  /* align-items: center; */
+  background-color: burlywood;
+}
+.whatWeDoTitle{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100vw;
+  border: solid;
+}
+.filler{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 100vw;
+  align-items: center;
+  justify-content: space-around;
+}
+.whatWeDoImage{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.homeImage{
+  height: 200px;
+  width: auto;
+  border: black 1px solid;
+}
+.aboutUs{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 500px;
+  border: solid black 1px;
+}
+.aboutUsTitle{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100vw;
+  border: solid;
+}
+.aboutUsImage{
+  width: 100vw;
+  height: auto;
+}

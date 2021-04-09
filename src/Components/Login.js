@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import {updateUser} from '../redux/reducer';
 
 class Login extends Component {
   constructor(props){
@@ -22,11 +24,11 @@ class Login extends Component {
   };
 
   login(){
-    console.log(this.state)
     axios.post('/api/auth/login', this.state)
       .then(res => {
         this.props.history.push('/')
         const {username} = this.state
+        // const profilePic = `https://picsum.photos/id/${}/200/300`
         this.props.updateUser({username})
       })
       .catch(err => {
@@ -71,4 +73,4 @@ class Login extends Component {
     );
   };
 };
-export default Login;
+export default connect(null, {updateUser})(Login);

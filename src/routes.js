@@ -17,6 +17,6 @@ export default (
     <Route path="/order-history" component={OrderHistory} />
     <Route path="/login" component={Login} />
     <Route path="/register" component={Register} />
-    <Route path="/product" component={Product} />
+    <Route path="/product/:id" component={Product} />
   </Switch>
 )
