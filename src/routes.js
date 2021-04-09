@@ -11,11 +11,11 @@ import Product from './Components/Product';
 
 export default (
   <Switch>
-    <Route exact path="/" component={Home} />
+    <Route exact path="/" component={Login} />
     <Route path="/all-products" component={AllProducts} />
     <Route path="/cart" component={Cart} />
-    <Route path="/order-history" component={OrderHistory} />
-    <Route path="/login" component={Login} />
+    <Route path="/order-history/:id" component={OrderHistory} />
+    <Route path="/home" component={Home} />
     <Route path="/register" component={Register} />
     <Route path="/product/:id" component={Product} />
   </Switch>

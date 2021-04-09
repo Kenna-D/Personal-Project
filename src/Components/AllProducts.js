@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 class AllProducts extends Component {
   constructor(props){
@@ -26,16 +26,17 @@ class AllProducts extends Component {
   render(){
     let {products, loading} = this.state;
     let mappedProducts = products.map(product => {
-      console.log(product)
-      return <div key={product.product_id}>
-        <Link to={`/product/${product.product_id}`} >
-          <h4>{product.name}</h4>
-        </Link>
+      return <div key={product.product_id} className='productsInfo'>
+        <img src={product.image} alt={product.name} className='productsImages'/>
+        {/* <Link to={`/product/${product.product_id}`} > */}
+        <h2 className='productsName'>{product.name}</h2>        
+        <h4 className='productsPrice'>${product.price}</h4>
+        <h5 className='productsDetails'>{product.details}</h5>
         
       </div>
     });
     return(
-      <div>
+      <div className='allProduct'>
         
         <div className='all-products-body'>
           {!loading 

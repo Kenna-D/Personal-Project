@@ -26,16 +26,25 @@ class Login extends Component {
   login(){
     axios.post('/api/auth/login', this.state)
       .then(res => {
-        this.props.history.push('/')
-        const {username} = this.state
-        // const profilePic = `https://picsum.photos/id/${}/200/300`
-        this.props.updateUser({username})
+        this.props.history.push('/home')
+        
+        this.getUser()
       })
       .catch(err => {
         console.log(err)
         this.setState({errorMsg: 'Incorrect username or password!'})
       })
+    
   };
+
+  getUser = () => {
+    axios.get('/api/auth/me')
+      .then(res => {
+        const {user_id} = res.data
+        const {username} = this.state
+        this.props.updateUser({username, user_id})
+      })
+  }
 
 
   removeErrorMsg = () => {
@@ -68,7 +77,6 @@ class Login extends Component {
             </Link>
           </div>
         </div>
-        Login
       </div>
     );
   };

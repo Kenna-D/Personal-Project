@@ -1,13 +1,14 @@
 const initialState = {
   username: '',
-  profilePic: ''
+  user_id: ''
 };
 
 const UPDATE_USER = 'UPDATE_USER';
-const USER_LOGOUT = 'USER_LOGOUT'
+const USER_LOGOUT = 'USER_LOGOUT';
+
 
 export function updateUser(user){
-  console.log( 'reducer updateUser', user)
+  // console.log( 'reducer updateUser', user)
   return {
     type: UPDATE_USER,
     payload: user
@@ -23,11 +24,10 @@ export function logout(){
 export default function reducer(state= initialState, action) {
   switch(action.type){
     case UPDATE_USER:
-      console.log(action.payload)
       return {
         ...state, 
         username: action.payload.username,
-        profilePic: action.payload.profilePic
+        user_id: action.payload.user_id
       };
     case USER_LOGOUT:
       return initialState;
