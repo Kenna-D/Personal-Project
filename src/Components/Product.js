@@ -34,18 +34,20 @@ class Product extends Component {
           {!this.state.loading
             ? 
             <div className='productContent'>
-              <h1>{this.state.name}</h1>
+              
               <div className='productInfo'>
-                <img src={this.state.image} alt={this.state.name}/>
+                <img src={this.state.image} alt={this.state.name} className='productImage'/>
+                <h1>{this.state.name}</h1>
                 <h4>${this.state.price}</h4>
-                <h3>{this.state.details}</h3>
-              </div>
-              <div className='productButtons'>
-                <Link to={'/all-products'} >
-                  <button >Back to All Products</button>
-                </Link>
+                <h3>{this.state.details}</h3>    
+                <div className='productButtons'>
+                  <Link to={'/all-products'} >
+                    <button >Back to All Products</button>
+                  </Link>
                 <button >Add to Cart</button>
               </div>
+              </div>
+              
             </div>
             : 
             <div>

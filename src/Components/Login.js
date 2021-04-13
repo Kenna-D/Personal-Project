@@ -1,80 +1,86 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import {updateUser} from '../redux/reducer';
 
-class Login extends Component {
-  constructor(props){
-    super(props);
+const Login = (props) => {
+  // constructor(props){
+  //   super(props);
 
-    this.state = {
-      username: '',
-      password: '',
-      errorMsg: ''
-    };
+  //   this.state = {
+  //     username: '',
+  //     password: '',
+  //     errorMsg: ''
+  //   };
 
-    this.login = this.login.bind(this);
-  };
+  // };
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
 
-  handleChange(prop, val){
-    this.setState({
-      [prop]: val
-    })
-  };
+  // handleChange(prop, val){
+  //   this.setState({
+  //     [prop]: val
+  //   })
+  // };
 
-  login(){
-    axios.post('/api/auth/login', this.state)
+  // useEffect(() => {
+  //   axios.post('/api/auth/login', {username, password})
+  //     .then(res => {
+  //       console.log('login', res.data)
+
+  //     })
+  // })
+
+  function login() {
+    axios.post('/api/auth/login', {username, password})
       .then(res => {
-        this.getUser()
-        
-        
+        getUser()
       })
       .catch(err => {
         console.log(err)
-        this.setState({errorMsg: 'Incorrect username or password!'})
+        setErrorMsg('Incorrect username or password!')
       })
     
   };
 
-  getUser = () => {
+  function getUser(){
     axios.get('/api/auth/me')
       .then(res => {
         console.log('login', res.data)
         const {user_id} = res.data
-        const {username} = this.state
-        this.props.updateUser({username, user_id})
-        this.props.history.push('/home')
+        // const username = {username}
+        props.updateUser({username, user_id})
+        props.history.push('/home')
       })
       .catch(err => console.log(err))
   }
 
 
-  removeErrorMsg = () => {
-    this.setState({
-      username: '',
-      password: '',
-      errorMsg: ''
-    })
+  function removeErrorMsg(){
+    setUsername('')
+    setPassword('')
+    setErrorMsg('')
   };
 
-  render(){
+  // render(){
     return(
       <div className='login'>
         <div className='loginContainer'>
           <img alt='logo'/>
           <h1>Love Your Shelf</h1>
-          {this.state.errorMsg && <h3>{this.state.errorMsg}<span onClick={this.removeErrorMsg}>X</span></h3>}
+          {errorMsg && <h3>{errorMsg}<span onClick={removeErrorMsg}>X</span></h3>}
           <div className='login-input-box'>
             <p>Username:</p>
-            <input value={this.state.username} onChange={e => this.handleChange('username', e.target.value)}/>
+            <input  onChange={e => setUsername(e.target.value)}/>
           </div>
           <div className='login-input-box'>
             <p>Password:</p>
-            <input value={this.state.password} type='password' onChange={e => this.handleChange('password', e.target.value)}/>
+            <input type='password' onChange={e => setPassword(e.target.value)}/>
           </div>
           <div className='login-buttons'>
-            <button onClick={this.login}>Login</button>
+            <button onClick={login}>Login</button>
             <Link to='/register'>
               Not a member yet? Register here!
             </Link>
@@ -82,6 +88,6 @@ class Login extends Component {
         </div>
       </div>
     );
-  };
+  // };
 };
 export default connect(null, {updateUser})(Login);

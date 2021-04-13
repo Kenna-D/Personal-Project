@@ -16,7 +16,7 @@ CREATE TABLE love_your_shelf_products(
     name VARCHAR(50),
     group_id INTEGER,
     image TEXT,
-    price INTEGER,
+    price VARCHAR(50),
     details TEXT
 );
 

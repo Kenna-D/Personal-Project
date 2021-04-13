@@ -183,10 +183,14 @@ ul {
   width: 100vw;
   justify-content: center;
   align-items: center;
-  background-color: coral;
+  background-color: white;
+  z-index: 1;
 }
 
 /* All Products */
+.productsLabel{
+  color: black;
+}
 .allProduct{
   position: relative;
   display: flex;
@@ -198,7 +202,7 @@ ul {
 }
 .productsImages{
   padding: 15px;
-  width: 320px;
+  width: 300px;
   height: auto;
 }
 .productsInfo{
@@ -227,6 +231,35 @@ ul {
   font-size: 17px;
 }
 
+/* A Product */
+.single-product-box{
+  position: relative;
+  display: flex;
+  top: 10vh;
+}
+.productContent{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+}
+.productInfo{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 15px;
+  background-color: cadetblue;
+}
+.productImage{
+  padding: 15px;
+  width: 300px;
+  height: auto;
+}
+
 /* Cart */
 .cart{
   position: relative;
@@ -241,4 +274,17 @@ ul {
   display: flex;
   justify-content: center;
   top: 10vh;
+}
+
+/* Register  */
+.registerPage{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background-color: white;
 }
