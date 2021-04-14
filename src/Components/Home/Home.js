@@ -1,10 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 import WhatWeDo from './WhatWeDo';
 import AboutUs from './AboutUs';
 
-class Home extends Component {
+const Home = (props) => {
+  // useEffect(() => {
+  //   console.log('componentDidMount', props)
+  // })
 
-  render(){
+  
     return (
       <div className='homePage'>
         <div className='openingLogo'>
@@ -16,7 +19,7 @@ class Home extends Component {
         <AboutUs />
       </div>
     )
-  }
+  
 };
 
 export default Home;

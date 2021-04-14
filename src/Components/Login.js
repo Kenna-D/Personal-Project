@@ -5,16 +5,7 @@ import { connect } from 'react-redux';
 import {updateUser} from '../redux/reducer';
 
 const Login = (props) => {
-  // constructor(props){
-  //   super(props);
-
-  //   this.state = {
-  //     username: '',
-  //     password: '',
-  //     errorMsg: ''
-  //   };
-
-  // };
+ 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
@@ -25,13 +16,7 @@ const Login = (props) => {
   //   })
   // };
 
-  // useEffect(() => {
-  //   axios.post('/api/auth/login', {username, password})
-  //     .then(res => {
-  //       console.log('login', res.data)
-
-  //     })
-  // })
+  
 
   function login() {
     axios.post('/api/auth/login', {username, password})
@@ -48,7 +33,6 @@ const Login = (props) => {
   function getUser(){
     axios.get('/api/auth/me')
       .then(res => {
-        console.log('login', res.data)
         const {user_id} = res.data
         // const username = {username}
         props.updateUser({username, user_id})

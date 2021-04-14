@@ -44,13 +44,17 @@ table {
 
 
 /* CSS STARTING POINT */
+.App{
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.4;
+}
 
 /* NAV */
 header {
   height: 10.1vh;
   width: 100vw;
   position: fixed;
-  background-color: #F7882F;
+  background-color: #687A8F;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -83,7 +87,7 @@ header {
 }
 .open {
   /* padding-left: 10vw; */
-  background-color: #F7882F;
+  background-color: #687A8F;
   width: 100vw;
   position: fixed;
   right: -0vw;
@@ -189,7 +193,10 @@ ul {
 
 /* All Products */
 .productsLabel{
-  color: black;
+  position: relative;
+  display: flex;
+  font-size: 30px;
+  margin: 5px;
 }
 .allProduct{
   position: relative;
@@ -198,12 +205,21 @@ ul {
   flex-direction: column;
   align-items: center;
   top: 10vh;
-  color: whitesmoke;
+  background-color: white;
+}
+.colorOptions{
+  position: relative;
+  display: flex;
+  width: 90vw;
+  font-size: 15px;
 }
 .productsImages{
   padding: 15px;
   width: 300px;
   height: auto;
+}
+.all-products-body{
+  color: #DCC7AA;
 }
 .productsInfo{
   position: relative;
@@ -211,15 +227,16 @@ ul {
   flex-direction: column;
   align-items: center;
   margin: 20px;
-  background-color: #687A8F;
+  background-color: white;
 }
 .productsName{
   font-size: 30px;
+  font-weight: 500;
 }
 .productsPrice{
   position: relative;
   display: flex;
-  padding-top: 8px;
+  margin-bottom: 10px;
   font-size: 20px;
 }
 .productsDetails{
@@ -236,6 +253,7 @@ ul {
   position: relative;
   display: flex;
   top: 10vh;
+  height: 90vh;
 }
 .productContent{
   position: relative;
@@ -250,14 +268,25 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 20px;
-  padding: 15px;
+  width: 90vw;
+  margin: 25px;
+  /* padding: 15px; */
   background-color: cadetblue;
 }
 .productImage{
   padding: 15px;
   width: 300px;
   height: auto;
+}
+.productDetails{
+  display: flex;
+  position: relative;
+  margin: 15px;
+}
+.productPrice{
+  position: relative;
+  display: flex;
+  /* margin-top: 15px; */
 }
 
 /* Cart */
@@ -287,4 +316,10 @@ ul {
   align-items: center;
   z-index: 1;
   background-color: white;
+}
+
+.link{
+  text-decoration: none;
+  color: #DCC7AA;
+
 }

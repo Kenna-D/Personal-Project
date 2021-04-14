@@ -1,63 +1,60 @@
 import axios from 'axios';
-import React, {Component} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 
-class Product extends Component {
-  constructor(props){
-    super(props);
-
-    this.state = {
-      name: '',
-      image: '',
-      details:'',
-      price: 0,
-      loading: true,
-      isLoggedIn: false
-    }
-  };
-  componentDidMount(){
+const Product = (props) => {
+  const [name, setName] = useState('');
+  const [image, setImage] = useState('');
+  const [details, setDetails] = useState('');
+  const [price, setPrice] = useState(0);
+  const [loading, setLoading] = useState(true);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
+  useEffect(() => {
     axios.get(`/api/products/${this.props.match.params.id}`)
       .then(res => {
         this.setState({...res.data, loading: false})
-        console.log(this.state)
+        setName(res.data.name)
+        setImage(res.data.image)
+        setDetails(res.data.details)
+        setPrice(res.data.price)
+        setLoading(false)
       })
-  };
+  }, []);
   
 
   
-
-  render(){
-    return(
-      <div>
-        
-        <div className='single-product-box'>
-          {!this.state.loading
-            ? 
-            <div className='productContent'>
-              
-              <div className='productInfo'>
-                <img src={this.state.image} alt={this.state.name} className='productImage'/>
-                <h1>{this.state.name}</h1>
-                <h4>${this.state.price}</h4>
-                <h3>{this.state.details}</h3>    
-                <div className='productButtons'>
-                  <Link to={'/all-products'} >
-                    <button >Back to All Products</button>
-                  </Link>
-                <button >Add to Cart</button>
-              </div>
-              </div>
-              
+  return(
+    <div>
+      
+      <div className='single-product-box'>
+        {!loading
+          ? 
+          <div className='productContent'>
+            
+            <div className='productInfo'>
+              <img src={image} alt={name}className='productImage'/>
+              <h1 className='productsName'>{name}</h1>
+              <h4 className='productPrice'>${price}</h4>
+              <h3 className='productDetails'>{details}</h3>    
+              <div className='productButtons'>
+                <Link to={'/all-products'} >
+                  <button >Back to All Products</button>
+                </Link>
+              <button >Add to Cart</button>
             </div>
-            : 
-            <div>
-              still Loading
             </div>
-          }
-        </div>
+            
+          </div>
+          : 
+          <div>
+            still Loading
+          </div>
+        }
       </div>
-    )
-  }
+    </div>
+  )
+
 };
 
 export default Product;

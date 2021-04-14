@@ -1,17 +1,16 @@
-import React, {Component} from 'react';
+import React, {} from 'react';
 
-class OrderHistory extends Component {
+const OrderHistory = (props) => {
   // constructor(props){
   //   super(props);
   // };
+  
 
-  render(){
-    return(
-      <div className='orderHistory'>
-        Order History
-      </div>
-    )
-  }
+  return(
+    <div className='orderHistory'>
+      Order History
+    </div>
+  )
 };
 
 export default OrderHistory;
