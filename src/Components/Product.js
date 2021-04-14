@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-
+import StripeCheckout from 'react-stripe-checkout';
+const {REACT_APP_PUBLISHABLE_KEY} = process.env;
+console.log(REACT_APP_PUBLISHABLE_KEY);
 const Product = (props) => {
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
@@ -11,16 +13,25 @@ const Product = (props) => {
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
   
   useEffect(() => {
-    axios.get(`/api/products/${this.props.match.params.id}`)
+    axios.get(`/api/products/${props.match.params.id}`)
       .then(res => {
-        this.setState({...res.data, loading: false})
+        // this.setState({...res.data, loading: false})
         setName(res.data.name)
         setImage(res.data.image)
         setDetails(res.data.details)
         setPrice(res.data.price)
         setLoading(false)
       })
-  }, []);
+  }, [props.match.params.id]);
+
+  const onToken = (token) => {
+    token.card = void 0;
+    console.log('token', token);
+    axios.post('/api/payment', { token, amount: price*100 } ).then(response => {
+      alert('Your order has been placed.')
+    })
+    .catch(err => console.log(err))
+  };
   
 
   
@@ -41,7 +52,11 @@ const Product = (props) => {
                 <Link to={'/all-products'} >
                   <button >Back to All Products</button>
                 </Link>
-              <button >Add to Cart</button>
+              <StripeCheckout 
+                token={onToken}
+                stripeKey={REACT_APP_PUBLISHABLE_KEY}
+                amount={price*100}
+              />
             </div>
             </div>
             
