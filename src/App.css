@@ -323,3 +323,9 @@ ul {
   color: #DCC7AA;
 
 }
+
+.mappedOrders{
+  background-color: blue;
+  height: 100px;
+  width: 100vw;
+}

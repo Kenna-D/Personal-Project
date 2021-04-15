@@ -1,6 +1,6 @@
 
 
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import {Link, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
@@ -9,18 +9,19 @@ import {updateUser, logout} from '../redux/reducer';
 const Nav =(props) => {
   const [menu, setMenu] = useState('closed');
 
-  useEffect(() => {
-    axios.get('/api/auth/me')
-      .then(res => {
-        // console.log(res)
-        props.updateUser(res.data)
-      })
-     .catch(err => console.log(err))
+  // useEffect(() => {
+  //   axios.get('/api/auth/me')
+  //     .then(res => {
+  //       console.log('props', props)
+  //       props.updateUser(res.data)
+  //     })
+  //    .catch(err => console.log('err', err))
 
-  }, [props]);
+  // }, [props]);
   
 
   function handleClick() {
+    console.log(props)
     if(menu === 'closed'){
       setMenu('open')
     } else {
@@ -53,7 +54,7 @@ const Nav =(props) => {
             <Link to='/home' onClick={handleClick}><li> Home</li></Link>
             <Link to='/all-products' onClick={handleClick}><li>All Products</li></Link>
             <Link to='/cart' onClick={handleClick}><li> Your Cart</li></Link>
-            <Link to={`/order-history/${props.user.user_id}`}onClick={handleClick}><li> Past Orders</li></Link>
+            <Link to={`/order-history/${props.user.reducer.user_id}`}onClick={handleClick}><li> Past Orders</li></Link>
             <li onClick={logout}> Logout</li>
           </ul>
   

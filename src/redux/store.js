@@ -1,5 +1,10 @@
-import {createStore} from 'redux';
+import {createStore, combineReducers} from 'redux';
 import reducer from './reducer';
+import ordersReducer from './ordersReducer';
 
-let store = createStore(reducer);
-export default store;
+let rootReducer = combineReducers({
+  reducer,
+  ordersReducer
+});
+
+export default createStore(rootReducer);

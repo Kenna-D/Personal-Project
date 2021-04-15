@@ -33,9 +33,9 @@ const Login = (props) => {
   function getUser(){
     axios.get('/api/auth/me')
       .then(res => {
-        const {user_id} = res.data
-        // const username = {username}
+        const {user_id, username} = res.data
         props.updateUser({username, user_id})
+        console.log(props)
         props.history.push('/home')
       })
       .catch(err => console.log(err))

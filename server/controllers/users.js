@@ -40,8 +40,6 @@ module.exports = {
       return res.status(409).send('Username / Password is incorrect')
     };
 
-    console.log(user);
-
     delete user.hash;
 
     req.session.user = {username: user.username, user_id: user.user_id, phone_number: user.phone_number, email: user.email, is_admin: user.is_admin};

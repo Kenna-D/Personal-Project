@@ -24,6 +24,7 @@ CREATE TABLE love_your_shelf_ordered_products (
     ordered_products_id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES love_your_shelf_users(user_id),
     product_id INTEGER REFERENCES love_your_shelf_products(product_id),
-    delivery_location VARCHAR(250),
+    color VARCHAR(25),
+    delivery_or_pickup VARCHAR(50),
     custom_details TEXT
 );

@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express'),
       userCtrl = require('./controllers/users'),
       productCtrl = require('./controllers/products'),
+      ordersCtrl = require('./controllers/orders'),
       paymentCtrl = require('./controllers/payments');
 const massive = require('massive');
 const session = require('express-session');
@@ -32,6 +33,7 @@ app.get('/api/products', productCtrl.getAll);
 app.get('/api/products/:id', productCtrl.getOne);
 
 //Orders Endpoints
+app.get('/api/orders/:id', ordersCtrl.getOrders);
 
 //Payment Endpoint
 app.post('/api/payment', paymentCtrl.payment);
