@@ -31,6 +31,14 @@ function IndividualOrder(props){
       });
   };
 
+  function deleteOrder(id){
+    axios.delete(`/api/orders/delete/${id}`)
+      .then(res => {
+        dispatch(getOrders(res.data))
+      })
+      .catch(err => console.log(err));
+  };
+
   return (
     <div className='mappedOrders'>
     <div>
@@ -48,7 +56,7 @@ function IndividualOrder(props){
     </div>
     <div className={edit === 'noEdit' ? 'noEdit' : 'edit'}>
       <button onClick={() => handleClick()}>Edit Order</button>
-      <button>Delete Order</button>   
+      <button onClick={() => deleteOrder(orders.ordered_products_id)}>Delete Order</button>   
     </div>
     <div className={edit === 'noEdit' ? 'edit' : 'noEdit'}>
       <button onClick={() => editOrder(orders.ordered_products_id)}>Submit Edit</button>

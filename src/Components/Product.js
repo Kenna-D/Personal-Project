@@ -11,6 +11,9 @@ const Product = (props) => {
   const [details, setDetails] = useState('');
   const [price, setPrice] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [color, setColor] = useState('');
+  const [deliveryOrPickup, setDeliveryOrPickup] = useState('');
+  const [customDetails, setCustomDetails] = useState('');
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
   
   useEffect(() => {
@@ -34,7 +37,9 @@ const Product = (props) => {
     .catch(err => console.log(err))
   };
   
-
+  const makeOrder = () => {
+    axios.post('/api/orders/create', {})
+  }
   
   return(
     <div>

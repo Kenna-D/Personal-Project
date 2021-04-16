@@ -5,9 +5,9 @@ module.exports = {
       .then(order => res.status(200).send(order))
       .catch(err => console.log(err));
   },
-  makeOrders: (req, res) => {
+  makeOrder: (req, res) => {
     const db = req.app.get('db');
-    const {user_id} = req.params.id;
+    const {user_id} = req.session.user;
     const {product_id, color, delivery_or_pickup, custom_details} = req.body;
     db.orders.create_order(user_id, product_id, color, delivery_or_pickup, custom_details)
       .then(order => res.status(200).send(order))
@@ -21,5 +21,13 @@ module.exports = {
     db.orders.update_order(id, details, user_id)
     .then(order => res.status(200).send(order))
     .catch(err => console.log(err));
+  },
+  deleteOrder: (req, res) => {
+    const db = req.app.get('db');
+    const {id} = req.params;
+    const {user_id} = req.session.user;
+    db.orders.delete_order(id, user_id)
+      .then(orders => res.status(200).send(orders))
+      .catch(err => console.log(err));
   }
 }
