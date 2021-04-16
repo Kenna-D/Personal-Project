@@ -34,6 +34,7 @@ app.get('/api/products/:id', productCtrl.getOne);
 
 //Orders Endpoints
 app.get('/api/orders/:id', ordersCtrl.getOrders);
+app.put('/api/orders/edit/:id', ordersCtrl.editOrder);
 
 //Payment Endpoint
 app.post('/api/payment', paymentCtrl.payment);

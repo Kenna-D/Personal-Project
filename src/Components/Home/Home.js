@@ -1,6 +1,7 @@
 import React from 'react';
 import WhatWeDo from './WhatWeDo';
 import AboutUs from './AboutUs';
+import './Home.css';
 
 const Home = (props) => {
   // useEffect(() => {

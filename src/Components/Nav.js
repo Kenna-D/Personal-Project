@@ -1,5 +1,4 @@
-
-
+import './Nav.css';
 import React, {useState} from 'react';
 import axios from 'axios';
 import {Link, withRouter} from 'react-router-dom';
@@ -53,7 +52,6 @@ const Nav =(props) => {
           <ul className={menu === 'closed' ? 'closed' : 'open'}>
             <Link to='/home' onClick={handleClick}><li> Home</li></Link>
             <Link to='/all-products' onClick={handleClick}><li>All Products</li></Link>
-            <Link to='/cart' onClick={handleClick}><li> Your Cart</li></Link>
             <Link to={`/order-history/${props.user.reducer.user_id}`}onClick={handleClick}><li> Past Orders</li></Link>
             <li onClick={logout}> Logout</li>
           </ul>

@@ -1,0 +1,53 @@
+header {
+  height: 10.1vh;
+  width: 100vw;
+  position: fixed;
+  background-color: #687A8F;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  z-index: 1;
+}
+.logo {
+  position: relative;
+  margin-left: 10px;
+}
+.homeNav {
+  position: absolute;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  width: 100vw;
+  /* right: 0px; */
+  left: 88vw;
+}
+.loginLink{
+  margin-right: 20px;
+}
+.menuIcon{
+  height: 30px;
+  width: 30px;
+  position: relative;
+  right: 0px;
+}
+.closed{
+  display: none;
+}
+.open {
+  /* padding-left: 10vw; */
+  background-color: #687A8F;
+  width: 100vw;
+  position: fixed;
+  right: -0vw;
+  top: 10vh;
+}
+li{
+  margin: 15px;
+}
+ul {
+  position: fixed;
+  font-size: 17px;
+  text-align: right;
+  animation-name: slide;
+  animation-duration: .5s;
+}

@@ -1,0 +1,39 @@
+.single-product-box{
+  position: relative;
+  display: flex;
+  top: 10vh;
+  height: 90vh;
+}
+.productContent{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+}
+.productInfo{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  margin: 25px;
+  /* padding: 15px; */
+  background-color: cadetblue;
+}
+.productImage{
+  padding: 15px;
+  width: 300px;
+  height: auto;
+}
+.productDetails{
+  display: flex;
+  position: relative;
+  margin: 15px;
+}
+.productPrice{
+  position: relative;
+  display: flex;
+  /* margin-top: 15px; */
+}

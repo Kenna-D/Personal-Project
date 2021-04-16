@@ -50,7 +50,7 @@ table {
 }
 
 /* NAV */
-header {
+/* header {
   height: 10.1vh;
   width: 100vw;
   position: fixed;
@@ -67,10 +67,10 @@ header {
 .homeNav {
   position: absolute;
   display: flex;
-  /* justify-content: center; */
+  
   align-items: center;
   width: 100vw;
-  /* right: 0px; */
+  
   left: 88vw;
 }
 .loginLink{
@@ -86,7 +86,7 @@ header {
   display: none;
 }
 .open {
-  /* padding-left: 10vw; */
+  
   background-color: #687A8F;
   width: 100vw;
   position: fixed;
@@ -102,10 +102,10 @@ ul {
   text-align: right;
   animation-name: slide;
   animation-duration: .5s;
-}
+} */
 
 /* Home */
-.homePage{
+/* .homePage{
   position: relative;
   display: flex;
   flex-direction: column;
@@ -125,8 +125,6 @@ ul {
   display: flex;
   flex-direction: column;
   height: 500px;
-  /* justify-content: center; */
-  /* align-items: center; */
   background-color: burlywood;
 }
 .whatWeDoTitle{
@@ -177,9 +175,9 @@ ul {
 .aboutUsImage{
   width: 100vw;
   height: auto;
-}
+} */
 
-/* Login */
+/* Login
 .login{
   position: relative;
   display: flex;
@@ -190,9 +188,63 @@ ul {
   background-color: white;
   z-index: 1;
 }
+.loginContainer{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  width: 310px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 0px 0px 9px -4px #000000;
+  background-color: #DCC7AA;
+}
+.loginBox{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 270px;
+}
+.loginLogo{
+  position: relative;
+  display: flex;
+  font-size: 30px;
+}
+.login-input-box{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 240px;
+}
+.input{
+  border: none;
+  border-radius: 4px;
+}
+.login-buttons{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+.loginButton{
+  width: 180px;
+  border-radius: 4px;
+  border: none;
+  height: 30px;
+  font-size: 20px;
+  background-color: white;
+}
+.loginButton:hover {
+  background-color: #8f9dad;
+} */
 
 /* All Products */
-.productsLabel{
+/* .productsLabel{
   position: relative;
   display: flex;
   font-size: 30px;
@@ -246,10 +298,10 @@ ul {
   align-items: center;
   padding: 10px;
   font-size: 17px;
-}
+} */
 
 /* A Product */
-.single-product-box{
+/* .single-product-box{
   position: relative;
   display: flex;
   top: 10vh;
@@ -270,7 +322,6 @@ ul {
   justify-content: center;
   width: 90vw;
   margin: 25px;
-  /* padding: 15px; */
   background-color: cadetblue;
 }
 .productImage{
@@ -286,27 +337,24 @@ ul {
 .productPrice{
   position: relative;
   display: flex;
-  /* margin-top: 15px; */
-}
+} */
 
-/* Cart */
-.cart{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  top: 10vh;
-}
 
 /* Order History */
-.orderHistory{
+/* .orderHistory{
   position: relative;
   display: flex;
   justify-content: center;
   top: 10vh;
 }
+.mappedOrders{
+  background-color: blue;
+  height: 100px;
+  width: 100vw;
+} */
 
 /* Register  */
-.registerPage{
+/* .registerPage{
   position: relative;
   display: flex;
   flex-direction: column;
@@ -316,16 +364,12 @@ ul {
   align-items: center;
   z-index: 1;
   background-color: white;
-}
+} */
 
 .link{
   text-decoration: none;
-  color: #DCC7AA;
-
+  color: black;
 }
-
-.mappedOrders{
-  background-color: blue;
-  height: 100px;
-  width: 100vw;
+.link:hover{
+  font-weight: bold;
 }
