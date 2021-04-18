@@ -39,27 +39,34 @@ const Register = (props) => {
   };
 
   return(
-    <div className='registerPage'>
-      {errorMsg && <h3>{errorMsg}<span onClick={removeErrorMsg}>X</span></h3>}
-          <div className='login-input-box'>
-            <p>Username:</p>
-            <input  onChange={e => setUsername(e.target.value)}/>
+    <div className='login'>
+      <div className='loginContainer'>
+        <div className='loginBox'>
+          <h1 className='loginLogo'>Register</h1>
+          {errorMsg && <h3>{errorMsg}<span onClick={removeErrorMsg}>X</span></h3>}
+          <div className='inputBox'>
+            <div className='login-input-box'>
+              <p>Username:</p>
+              <input className='input' onChange={e => setUsername(e.target.value)}/>
+            </div>
+            <div className='login-input-box'>
+              <p>Password:</p>
+              <input className='input' onChange={e => setPassword(e.target.value)}/>
+            </div>
+            <div className='login-input-box'>
+              <p>Email:</p>
+              <input className='input' onChange={e => setEmail(e.target.value)}/>
+            </div>
+            <div className='login-input-box'>
+              <p>Phone Number:</p>
+              <input className='input' onChange={e => setPhoneNumber(e.target.value)}/>
+            </div>
           </div>
-          <div className='login-input-box'>
-            <p>Password:</p>
-            <input type='password' onChange={e => setPassword(e.target.value)}/>
+          <div className='register-buttons'>
+            <button className='loginButton' onClick={register}>Register</button>
           </div>
-          <div className='login-input-box'>
-            <p>Email:</p>
-            <input  onChange={e => setEmail(e.target.value)}/>
-          </div>
-          <div className='login-input-box'>
-            <p>Phone Number:</p>
-            <input onChange={e => setPhoneNumber(e.target.value)}/>
-          </div>
-          <div className='login-buttons'>
-            <button onClick={register}>Register</button>
-          </div>
+        </div>
+      </div>
     </div>
   )
 };

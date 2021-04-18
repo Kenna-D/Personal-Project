@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
   height: 690px;
-  background-color: blue;
+  background-color: white;
 }
 .whatWeDo{
   position: relative;
@@ -70,4 +70,7 @@
 .aboutUsImage{
   width: 100vw;
   height: auto;
+}
+.homeImg{
+  height: 300px;
 }

@@ -11,9 +11,9 @@ const Product = (props) => {
   const [details, setDetails] = useState('');
   const [price, setPrice] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [color, setColor] = useState('');
-  const [deliveryOrPickup, setDeliveryOrPickup] = useState('');
-  const [customDetails, setCustomDetails] = useState('');
+  // const [color, setColor] = useState('');
+  // const [deliveryOrPickup, setDeliveryOrPickup] = useState('');
+  // const [customDetails, setCustomDetails] = useState('');
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
   
   useEffect(() => {
@@ -37,9 +37,9 @@ const Product = (props) => {
     .catch(err => console.log(err))
   };
   
-  const makeOrder = () => {
-    axios.post('/api/orders/create', {})
-  }
+  // const makeOrder = () => {
+  //   axios.post('/api/orders/create', {})
+  // }
   
   return(
     <div>
@@ -53,7 +53,33 @@ const Product = (props) => {
               <img src={image} alt={name}className='productImage'/>
               <h1 className='productsName'>{name}</h1>
               <h4 className='productPrice'>${price}</h4>
-              <h3 className='productDetails'>{details}</h3>    
+              <h3 className='productDetails'>{details}</h3>
+              <div>
+                <h1>Choose a color</h1>
+                <select>
+                  <option> --- </option>
+                  <option>Black</option>
+                  <option>Antique White</option>
+                  <option>Americana Blue</option>
+                  <option>Hershey Brown</option>
+                  <option>Mustard</option>
+                  <option>Olive Green</option>
+                  <option>Red</option>
+                  <option>Robin Egg Blue</option>
+                </select>
+              </div>
+              <div>
+                <h1>Delivery or Pickup</h1>
+                <select>
+                  <option> --- </option>
+                  <option>Pickup</option>
+                  <option>Free Delivery to South Salt Lake County</option>
+                </select>
+              </div>
+              <div>
+                <h1>Custom Details</h1>
+                <input></input>
+              </div>    
               <div className='productButtons'>
                 <Link to={'/all-products'} >
                   <button >Back to All Products</button>
