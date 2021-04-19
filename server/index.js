@@ -34,12 +34,12 @@ app.get('/api/products/:id', productCtrl.getOne);
 
 //Orders Endpoints
 app.get('/api/orders/:id', ordersCtrl.getOrders);
-app.post('/api/orders/create', ordersCtrl.makeOrder);
 app.put('/api/orders/edit/:id', ordersCtrl.editOrder);
 app.delete('/api/orders/delete/:id', ordersCtrl.deleteOrder);
 
 //Payment Endpoint
 app.post('/api/payment', paymentCtrl.payment);
+// app.post('/api/orders/create', paymentCtrl.makeOrder);
 
 massive({
   connectionString: CONNECTION_STRING,

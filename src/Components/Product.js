@@ -1,23 +1,26 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
+import {useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
 import StripeCheckout from 'react-stripe-checkout';
 import './Product.css';
 
 const {REACT_APP_PUBLISHABLE_KEY} = process.env;
 const Product = (props) => {
+  const {user_id} = useSelector((state) => state.reducer);
+
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
   const [details, setDetails] = useState('');
   const [price, setPrice] = useState(0);
   const [loading, setLoading] = useState(true);
-  // const [color, setColor] = useState('');
-  // const [deliveryOrPickup, setDeliveryOrPickup] = useState('');
-  // const [customDetails, setCustomDetails] = useState('');
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [color, setColor] = useState('');
+  const [deliveryOrPickup, setDeliveryOrPickup] = useState('');
+  const [customDetails, setCustomDetails] = useState('');
+  const product_id = props.match.params.id;
   
   useEffect(() => {
-    axios.get(`/api/products/${props.match.params.id}`)
+    axios.get(`/api/products/${product_id}`)
       .then(res => {
         // this.setState({...res.data, loading: false})
         setName(res.data.name)
@@ -26,20 +29,18 @@ const Product = (props) => {
         setPrice(res.data.price)
         setLoading(false)
       })
-  }, [props.match.params.id]);
+  }, [product_id]);
 
   const onToken = (token) => {
     token.card = void 0;
     console.log('token', token);
-    axios.post('/api/payment', { token, amount: price*100 } ).then(response => {
+    axios.post('/api/payment', { token, amount: price*100, product_id, color, deliveryOrPickup, customDetails} ).then(response => {
+      console.log(response.data)
       alert('Your order has been placed.')
+      props.history.push(`/order-history/${user_id}`)
     })
     .catch(err => console.log(err))
   };
-  
-  // const makeOrder = () => {
-  //   axios.post('/api/orders/create', {})
-  // }
   
   return(
     <div>
@@ -56,29 +57,29 @@ const Product = (props) => {
               <h3 className='productDetails'>{details}</h3>
               <div>
                 <h1>Choose a color</h1>
-                <select>
-                  <option> --- </option>
-                  <option>Black</option>
-                  <option>Antique White</option>
-                  <option>Americana Blue</option>
-                  <option>Hershey Brown</option>
-                  <option>Mustard</option>
-                  <option>Olive Green</option>
-                  <option>Red</option>
-                  <option>Robin Egg Blue</option>
+                <select value={color} onChange={e => setColor(e.target.value)}>
+                  <option value={''}> --- </option>
+                  <option value={'Black'}>Black</option>
+                  <option value={'Antique White'}>Antique White</option>
+                  <option value={'Americana Blue'}>Americana Blue</option>
+                  <option value={'Hershey Brown'}>Hershey Brown</option>
+                  <option value={'Mustard'}>Mustard</option>
+                  <option value={'Olive Green'}>Olive Green</option>
+                  <option value={'Red'}>Red</option>
+                  <option value={'Robin Egg Blue'}>Robin Egg Blue</option>
                 </select>
               </div>
               <div>
                 <h1>Delivery or Pickup</h1>
-                <select>
-                  <option> --- </option>
-                  <option>Pickup</option>
-                  <option>Free Delivery to South Salt Lake County</option>
+                <select value={deliveryOrPickup} onChange={e => setDeliveryOrPickup(e.target.value)}>
+                  <option value={''}> --- </option>
+                  <option value={'Pickup'}>Pickup</option>
+                  <option value={'Delivery'}>Free Delivery to South Salt Lake County</option>
                 </select>
               </div>
               <div>
                 <h1>Custom Details</h1>
-                <input></input>
+                <input value={customDetails} onChange={e => setCustomDetails(e.target.value)}></input>
               </div>    
               <div className='productButtons'>
                 <Link to={'/all-products'} >
