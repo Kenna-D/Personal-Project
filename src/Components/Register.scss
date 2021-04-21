@@ -29,26 +29,26 @@
   box-shadow: 0px 0px 9px -4px #000000;
   background-color: sass.$orange;
 }
-.loginBox{
+.registerBox{
   @include sass.flexCenterRelative(column);
   justify-content: space-around;
   height: 290px;
 }
-.login-input-box{
+.register-input-box{
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 240px;
 }
-.inputBox{
+.registerinputBox{
   position: relative;
   display: flex;
   flex-direction: column;
   height: 200px;
   justify-content: space-between;
 }
-.input{
+.Rinput{
   width: 150px;
   border: none;
   border-radius: 4px;
@@ -62,7 +62,7 @@
   align-items: center;
   height: 60px;
 }
-.loginButton{
+.registerButton{
   width: 180px;
   border-radius: 4px;
   border: none;
@@ -71,7 +71,7 @@
   background-color: white;
   margin: 10px;
 }
-.loginButton:hover {
+.registerButton:hover {
   background-color: #8f9dad;
 }
 p{
@@ -79,12 +79,33 @@ p{
   margin: 0px;
 }
 
-@media (min-width: 600px){
+@media (min-width: 700px){
   .loginContainer{
     height: 600px;
     width: 600px;
   }
-  .loginBox{
-    height: 600px;
+  .loginLogo{
+    font-size: 40px;
   }
+  .registerBox{
+    height: 650px;
+  }
+  .register-input-box{
+    width: 450px;
+  }
+  p{
+    font-size: 25px;
+  }
+  .Rinput{
+    width: 300px;
+  }
+  .registerButton{
+    height: 40px;
+    width: 200px;
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1200px){
+  
 }

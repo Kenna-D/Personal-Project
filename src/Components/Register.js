@@ -41,29 +41,29 @@ const Register = (props) => {
   return(
     <div className='login'>
       <div className='loginContainer'>
-        <div className='loginBox'>
+        <div className='registerBox'>
           <h1 className='loginLogo'>Register</h1>
           {errorMsg && <h3>{errorMsg}<span onClick={removeErrorMsg}>X</span></h3>}
-          <div className='inputBox'>
-            <div className='login-input-box'>
+          <div className='registerinputBox'>
+            <div className='register-input-box'>
               <p>Username:</p>
-              <input className='input' onChange={e => setUsername(e.target.value)}/>
+              <input className='Rinput' onChange={e => setUsername(e.target.value)}/>
             </div>
-            <div className='login-input-box'>
+            <div className='register-input-box'>
               <p>Password:</p>
-              <input className='input' onChange={e => setPassword(e.target.value)}/>
+              <input className='Rinput' onChange={e => setPassword(e.target.value)}/>
             </div>
-            <div className='login-input-box'>
+            <div className='register-input-box'>
               <p>Email:</p>
-              <input className='input' onChange={e => setEmail(e.target.value)}/>
+              <input className='Rinput' onChange={e => setEmail(e.target.value)}/>
             </div>
-            <div className='login-input-box'>
+            <div className='register-input-box'>
               <p>Phone Number:</p>
-              <input className='input' onChange={e => setPhoneNumber(e.target.value)}/>
+              <input className='Rinput' onChange={e => setPhoneNumber(e.target.value)}/>
             </div>
           </div>
           <div className='register-buttons'>
-            <button className='loginButton' onClick={register}>Register</button>
+            <button className='registerButton' onClick={register}>Register</button>
           </div>
         </div>
       </div>

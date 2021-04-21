@@ -36,7 +36,7 @@ const Product = (props) => {
   const onToken = (token) => {
     token.card = void 0;
     // console.log('token', token);
-    axios.post('/api/payment', { token, amount: price*100, product_id, color, deliveryOrPickup, customDetails} ).then(response => {
+    axios.post('/api/payment', { token, amount: price*100, product_id, color, deliveryOrPickup, customDetails, name, image, price} ).then(response => {
       alert('Your order has been placed.')
       props.history.push(`/order-history/${user_id}`)
     })

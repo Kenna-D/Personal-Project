@@ -32,6 +32,11 @@
   display: flex;
   font-size: 30px;
 }
+.loginInputBox{
+  @include sass.flexCenterRelative(column);
+  justify-content: space-between;
+  height: 200px;
+}
 .login-input-box{
   position: relative;
   display: flex;
@@ -61,4 +66,36 @@
 .loginButton:hover {
   background-color: #8f9dad;
   border: none;
+}
+
+@media (min-width: 700px){
+  .loginBox{
+    height:500px;
+  }
+  .loginButton{
+    height: 50px;
+    width: 200px;
+    font-size: 25px;
+  }
+  .loginInputBox{
+    height: 250px;
+    width: 300px;
+  }
+  .login-input-box{
+    width: 450px;
+  }
+  .input{
+    width: 300px;
+  }
+  .link{
+    font-size: 20px;
+  }
+  .login-buttons{
+    height: 100px;
+    width: 400px;
+  }
+}
+
+@media (min-width: 1200px){
+  
 }
