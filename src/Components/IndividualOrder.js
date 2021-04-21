@@ -42,24 +42,24 @@ function IndividualOrder(props){
   return (
     <div className='mappedOrders'>
     <div>
-      <h1>{orders.name}</h1>
-      <h3>${orders.price}</h3>
-      <h3>{orders.color}</h3>
+      <h1 className='orderName'>The {orders.name}</h1>
+      <h3>Total: ${orders.price}</h3>
+      <h3>Color: {orders.color}</h3>
       <div className={edit === 'noEdit' ? 'noEdit' : 'edit'}>
-        <h3>{orders.custom_details}</h3>
+        <h3> Details: {orders.custom_details}</h3>
       </div>
       <div className={edit === 'noEdit' ? 'edit' : 'noEdit'}>
         <input value={details} onChange={e => editComment(e)}></input>
       </div>
-      <h3>{orders.delivery_or_pickup}</h3>
+      <h3>Delivery or Pickup: {orders.delivery_or_pickup}</h3>
       {/* price, custom details, pickup or delivery */}
     </div>
     <div className={edit === 'noEdit' ? 'noEdit' : 'edit'}>
-      <button onClick={() => handleClick()}>Edit Order</button>
-      <button onClick={() => deleteOrder(orders.ordered_products_id)}>Delete Order</button>   
+      <button className='orderButtons' onClick={() => handleClick()}>Edit Order</button>
+      <button className='orderButtons' onClick={() => deleteOrder(orders.ordered_products_id)}>Delete Order</button>   
     </div>
     <div className={edit === 'noEdit' ? 'edit' : 'noEdit'}>
-      <button onClick={() => editOrder(orders.ordered_products_id)}>Submit Edit</button>
+      <button className='orderButtons' onClick={() => editOrder(orders.ordered_products_id)}>Submit Edit</button>
     </div>
   </div>
   )

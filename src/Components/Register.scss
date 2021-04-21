@@ -1,45 +1,37 @@
+@use '../sass';
+
 .registerPage{
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  @include sass.flexCenterRelative(column);
   height: 100vh;
   width: 100vw;
-  justify-content: center;
-  align-items: center;
   z-index: 1;
   background-color: white;
 }
 .loginLogo{
+  @include sass.flexCenterRelative(row);
+  @include sass.title;
+
   margin: 10px;
 }
 .login{
-  position: relative;
-  display: flex;
+  @include sass.flexCenterRelative(column);
   height: 100vh;
   width: 100vw;
-  justify-content: center;
-  align-items: center;
   background-color: white;
   z-index: 1;
 }
 .loginContainer{
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  @include sass.flexCenterRelative(column);
   height: 400px;
   width: 310px;
   justify-content: space-around;
-  align-items: center;
   border-radius: 4px;
   box-shadow: 0px 0px 9px -4px #000000;
-  background-color: #DCC7AA;
+  background-color: sass.$orange;
 }
 .loginBox{
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  @include sass.flexCenterRelative(column);
   justify-content: space-around;
-  align-items: center;
   height: 290px;
 }
 .login-input-box{
@@ -57,6 +49,7 @@
   justify-content: space-between;
 }
 .input{
+  width: 150px;
   border: none;
   border-radius: 4px;
   height: 24px;
@@ -80,4 +73,18 @@
 }
 .loginButton:hover {
   background-color: #8f9dad;
+}
+p{
+  @include sass.pTexts;
+  margin: 0px;
+}
+
+@media (min-width: 600px){
+  .loginContainer{
+    height: 600px;
+    width: 600px;
+  }
+  .loginBox{
+    height: 600px;
+  }
 }

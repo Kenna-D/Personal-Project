@@ -1,0 +1,75 @@
+@forward './colors.scss';
+
+@mixin flexCenterRelative($direction) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+@mixin link {
+  text-decoration: none;
+  color: black;
+}
+@mixin backgroundImage($url, $size) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: $size;
+}
+@mixin button($size) {
+  border-radius: 4px;
+  border: none;
+  font-size: $size;
+  background-color: white;
+  &:hover{
+    background-color: #8f9dad;
+  }
+}
+@mixin pTexts {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  width: 95vw;
+  font-size: 15px;
+  margin: 12px;
+  line-height: 1.6;
+}
+@mixin icon {
+  height: 30px;
+  width: 30px;
+  position: relative;
+}
+@mixin title {
+  color: black;
+  font-weight: 300;
+  font-size: 30px;
+  height: 70px;
+  width: 100vw;
+}
+@mixin productTag {
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: $boxShadow;
+}
+@mixin selections {
+  width: 240px;
+  height: 25px;
+}
+
+
+$font: 'Lato', sans-serif;
+$boxShadow: 0px 0px 9px -2px #000000;
+
+
+@mixin for-tablet {
+  @media (min-width: 600px) { @content; }
+}
+// @mixin for-tablet-landscape-up {
+//   @media (min-width: 900px) { @content; }
+// }
+@mixin for-desktop {
+  @media (min-width: 1200px) { @content; }
+}
+// @mixin for-big-desktop-up {
+//   @media (min-width: 1800px) { @content; }
+// }
+

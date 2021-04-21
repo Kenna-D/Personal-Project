@@ -1,0 +1,39 @@
+@use '../sass';
+
+.orderHistory{
+  @include sass.flexCenterRelative(column);
+  top: 10vh;
+  width: 100vw;
+}
+.mappedOrders{
+  @include sass.productTag;
+  @include sass.flexCenterRelative(column);
+  @include sass.pTexts;
+  align-items: flex-start;
+  background-color: sass.$orange;
+  height: auto;
+  width: 340px;
+  margin: 10px;
+}
+.ordersTitle{
+  @include sass.flexCenterRelative(column);
+  @include sass.title;
+}
+.orderName{
+  font-size: 20px
+}
+.orderButtons{
+  @include sass.button(18px);
+  margin: 5px;
+  &:hover{
+    background-color: white;
+    border: solid sass.$blue;
+  }
+}
+.noEdit{
+  position: relative;
+  display: flex;
+}
+.edit{
+  display: none;
+}

@@ -1,0 +1,53 @@
+@use '../sass';
+
+.allProduct{
+  @include sass.flexCenterRelative(column);
+  width: 100vw;
+  top: 10vh;
+  background-color: sass.$orange;
+  opacity: .85;
+}
+.productsLabel{
+  @include sass.flexCenterRelative(row);
+  @include sass.title;
+}
+.colorOptions{
+  @include sass.flexCenterRelative(column);
+  @include sass.pTexts;
+  background-color: white;
+  padding: 10px;
+  @include sass.productTag;
+}
+.productsImages{
+  padding: 15px;
+  width: 330px;
+  height: auto;
+}
+.all-products-body{
+  @include sass.pTexts;
+  margin: 0;
+}
+.productsInfo{
+  @include sass.flexCenterRelative(column);
+  margin: 20px;
+  background-color: white;
+  @include sass.productTag;
+}
+.productsName{
+  @include sass.flexCenterRelative(column);
+  @include sass.title;
+  height: 40px;
+  width: 70vw;
+  flex-wrap: wrap;
+}
+.productsPrice{
+  position: relative;
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.productsDetails{
+  @include sass.flexCenterRelative(column);
+  padding: 10px;
+  font-size: 17px;
+}

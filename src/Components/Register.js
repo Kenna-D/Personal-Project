@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import {updateUser} from '../redux/reducer';
 import { connect } from 'react-redux';
-import './Register.css';
+import './Register.scss';
 
 const Register = (props) => {
   const [username, setUsername] = useState('');

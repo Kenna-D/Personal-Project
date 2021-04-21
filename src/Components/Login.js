@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import {updateUser} from '../redux/reducer';
-import './Login.css';
+import './Login.scss';
 
 const Login = (props) => {
  

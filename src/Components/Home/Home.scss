@@ -1,0 +1,95 @@
+@use '../../sass';
+
+.homePage{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  // top: 10vh;
+}
+.openingLogo{
+  @include sass.flexCenterRelative(column);
+  height: 450px;
+  @include sass.backgroundImage('https://cdn.pixabay.com/photo/2016/11/29/08/02/furniture-1868274__340.jpg', 120vw 450px);
+  opacity: .7;
+}
+.h1{
+  font-family: sass.$font;
+  font-size: 37px;
+  font-weight: 600;
+  color: sass.$darkBlue;
+  opacity: 1;
+}
+
+
+.whatWeDo{
+  @include sass.flexCenterRelative(column);
+  height: auto;
+}
+.whatWeDoTitle{
+  @include sass.flexCenterRelative(row);
+  @include sass.title;
+  background-color: sass.$orange;
+  box-shadow: sass.$boxShadow;
+  z-index: 1;
+  opacity: .85;
+}
+.filler{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: auto;
+  width: 100vw;
+}
+.whatWeDoImage{
+  // @include sass.flexCenterRelative(column);
+
+  width: 100vw;
+  height: auto;
+}
+.homeImage{
+  height: 550px;
+  @include sass.backgroundImage('https://previews.dropbox.com/p/thumb/ABIdOG5sEfEilBYLtXzpMBSHseRL33kEiYhVLaEh9WJvXx1s6JhNpPyvoJX0_NpPGHo2xPRqZ4nbwMeeeRnnI3RG8NIgE4018BXDo9Gq1VpH-qdI7DP2EaF621Qb_VKCUbnG2AU6Z59eR7HXqLIWh_ZCa_TscTLv3yYz3yJ2eh1DTactmsjgpz7oyBIyCI3WoXm44ARj_Nwi_eDR0-YMM-iMh5gvWleJGUD1PAtI9QVIx3T5_zcpmcP05pF58BNYLWC2Bw6ajhT157eyWLj04fC4duHokZCJkMA1fe7DguMzo5lWoeWt9Kpw2jujB4p7PKNaIOjtwV7WNwwK_aa4wrMp_KWjvKYziCjfQdfc92yH4A/p.jpeg?fv_content=true&size_mode=5', 100vw 550px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.allButton{
+  @include sass.button(20px);
+  height: 35px;
+  margin: 15px;
+  font-weight: 200;
+}
+.whatWeDoText{
+  @include sass.flexCenterRelative(column);
+  // background-color: sass.$blue;
+}
+.h3Text{
+  @include sass.pTexts;
+}
+
+
+.aboutUs{
+  @include sass.flexCenterRelative(column);
+  height: auto;
+}
+.aboutUsTitle{
+  @include sass.flexCenterRelative(column);
+  @include sass.title;
+  background-color: sass.$blue;
+  box-shadow: sass.$boxShadow;
+  z-index: 1;
+  opacity: .85;
+}
+.aboutUsImage{
+  width: 100vw;
+  height: auto;
+}
+.aboutFiller{
+  @include sass.flexCenterRelative(column-reverse);
+}
+// .homeImg{
+//   height: 300px;
+// }

@@ -2,8 +2,9 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getOrders} from '../redux/ordersReducer';
 import axios from 'axios';
-import './OrderHistory.css';
+import './OrderHistory.scss';
 import IndividualOrder from './IndividualOrder';
+import  Nav from './Nav'; 
 
 function OrderHistory(props){
   
@@ -21,7 +22,7 @@ function OrderHistory(props){
       let id = user_id
       axios.get(`/api/orders/${id}`)
         .then(res => {
-          console.log(res.data)
+          // console.log(res.data)
           dispatch(getOrders(res.data))
         })
         .catch(err => console.log('getorders', err))
@@ -37,9 +38,12 @@ function OrderHistory(props){
   });
 
   return(
-    <div className='orderHistory'>
-      <h1>Order History</h1>
-      {mappedOrders}
+    <div>
+      <Nav />
+      <div className='orderHistory'>
+        <h1 className='ordersTitle'>Order History</h1>
+        {mappedOrders}
+      </div>
     </div>
   )
 };

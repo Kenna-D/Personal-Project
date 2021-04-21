@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import './AllProducts.css';
+import './AllProducts.scss';
+import  Nav from './Nav'; 
 
 const AllProducts = (props) => {
   const [products, setProducts] = useState([]);
@@ -28,18 +29,23 @@ const AllProducts = (props) => {
     </div>
   });
   return(
-    <div className='allProduct'>
-      <h1 className='productsLabel'>Our Products</h1>
-      <p className='colorOptions'>All of our products are available in thesedifferent colors: Black, Antique White, Americana Blue, Hershey BarBrown, Mustard, Olive Green, Red and Robin Egg Blue.</p>
-      <div className='all-products-body'>
-        {!loading 
-          ?
-          mappedProducts
-          :
-          <div>
-            loading
-          </div>
-        }
+    <div>
+      <Nav/>
+    
+      <div className='allProduct'>
+      
+        <h1 className='productsLabel'>Our Products</h1>
+        <p className='colorOptions'>All of our products are available in these different colors: Black, Antique White, Americana Blue, Hershey BarBrown, Mustard, Olive Green, Red and Robin Egg Blue.</p>
+        <div className='all-products-body'>
+          {!loading 
+            ?
+            mappedProducts
+            :
+            <div>
+              loading
+            </div>
+          }
+        </div>
       </div>
     </div>
   );

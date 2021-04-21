@@ -1,12 +1,15 @@
+@use '../sass';
+
 header {
   height: 10.1vh;
   width: 100vw;
   position: fixed;
-  background-color: #687A8F;
+  background-color: white;
   display: flex;
   justify-content: left;
   align-items: center;
-  z-index: 1;
+  z-index: 2;
+  box-shadow: sass.$boxShadow;
 }
 .logo {
   position: relative;
@@ -19,35 +22,50 @@ header {
   align-items: center;
   width: 100vw;
   /* right: 0px; */
-  left: 88vw;
+  // left: 88vw;
 }
 .loginLink{
   margin-right: 20px;
 }
+.navbar{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+}
 .menuIcon{
-  height: 30px;
-  width: 30px;
-  position: relative;
-  right: 0px;
+  @include sass.icon;
+  margin-left: 15px;
+  // right: 0px;
+}
+.logoutIcon{
+  @include sass.icon;
+  margin-right: 12px;
 }
 .closed{
   display: none;
 }
 .open {
   /* padding-left: 10vw; */
-  background-color: #687A8F;
+  background-color: white;
   width: 100vw;
   position: fixed;
   left: 0;
   top: 10vh;
+  /* box-shadow: 0px 0px 8px -4px #000000; */
+  z-index: 3;
 }
 li{
   margin: 15px;
+  @include sass.link;
+  font-size: 18px;
+  
 }
 ul {
   position: fixed;
-  font-size: 17px;
-  text-align: right;
+  text-align: left;
   animation-name: slide;
   animation-duration: .5s;
 }

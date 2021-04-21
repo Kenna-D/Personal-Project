@@ -1,4 +1,4 @@
-import './Nav.css';
+import './Nav.scss';
 import React, {useState} from 'react';
 import axios from 'axios';
 import {Link, withRouter} from 'react-router-dom';
@@ -6,21 +6,10 @@ import {connect} from 'react-redux';
 import {updateUser, logout} from '../redux/reducer';
 
 const Nav =(props) => {
-  const [menu, setMenu] = useState('closed');
-
-  // useEffect(() => {
-  //   axios.get('/api/auth/me')
-  //     .then(res => {
-  //       console.log('props', props)
-  //       props.updateUser(res.data)
-  //     })
-  //    .catch(err => console.log('err', err))
-
-  // }, [props]);
-  
+  const [menu, setMenu] = useState('closed');  
 
   function handleClick() {
-    console.log(props)
+    // console.log(props)
     if(menu === 'closed'){
       setMenu('open')
     } else {
@@ -36,24 +25,27 @@ const Nav =(props) => {
       })
   };
 
-  
-    // console.log(this.props)
   return(
     <header>
-      <div className="logo">
+      {/* <div className="logo">
         Love Your Shelf
-      </div>
+      </div> */}
       <nav className="homeNav">
         <section>
+          <div className='navbar'>
+
           <div className='menu'>
             <img src='https://image.flaticon.com/icons/png/128/545/545705.png' alt='Menu' className='menuIcon' onClick={handleClick}/>
+          </div>
+          <div className='logout'>
+            <img src='https://image.flaticon.com/icons/png/128/1286/1286853.png' alt='logout' className='logoutIcon' onClick={logout} />
+          </div>
           </div>
         
           <ul className={menu === 'closed' ? 'closed' : 'open'}>
             <Link to='/home' onClick={handleClick}><li> Home</li></Link>
             <Link to='/all-products' onClick={handleClick}><li>All Products</li></Link>
             <Link to={`/order-history/${props.user.reducer.user_id}`}onClick={handleClick}><li> Past Orders</li></Link>
-            <li onClick={logout}> Logout</li>
           </ul>
   
         </section>

@@ -1,3 +1,5 @@
+@use './sass';
+
 *{
   box-sizing: border-box;
 }
@@ -49,8 +51,15 @@ table {
 
 /* CSS STARTING POINT */
 .App{
-  font-family: 'Open Sans', sans-serif;
+  font-family: sass.$font;
   line-height: 1.4;
+}
+.link{
+  text-decoration: none;
+  color: black;
+}
+.link:hover{
+  font-weight: bold;
 }
 
 /* NAV */
@@ -370,10 +379,5 @@ ul {
   background-color: white;
 } */
 
-.link{
-  text-decoration: none;
-  color: black;
-}
-.link:hover{
-  font-weight: bold;
-}
+
+

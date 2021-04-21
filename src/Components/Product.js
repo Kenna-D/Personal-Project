@@ -3,9 +3,11 @@ import React, {useState, useEffect} from 'react';
 import {useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
 import StripeCheckout from 'react-stripe-checkout';
-import './Product.css';
+import './Product.scss';
+import  Nav from './Nav'; 
 
 const {REACT_APP_PUBLISHABLE_KEY} = process.env;
+
 const Product = (props) => {
   const {user_id} = useSelector((state) => state.reducer);
 
@@ -33,9 +35,8 @@ const Product = (props) => {
 
   const onToken = (token) => {
     token.card = void 0;
-    console.log('token', token);
+    // console.log('token', token);
     axios.post('/api/payment', { token, amount: price*100, product_id, color, deliveryOrPickup, customDetails} ).then(response => {
-      console.log(response.data)
       alert('Your order has been placed.')
       props.history.push(`/order-history/${user_id}`)
     })
@@ -44,7 +45,7 @@ const Product = (props) => {
   
   return(
     <div>
-      
+      <Nav/>
       <div className='single-product-box'>
         {!loading
           ? 
@@ -52,11 +53,11 @@ const Product = (props) => {
             
             <div className='productInfo'>
               <img src={image} alt={name}className='productImage'/>
-              <h1 className='productsName'>{name}</h1>
+              <h1 className='productsName'>The {name}</h1>
               <h4 className='productPrice'>${price}</h4>
               <h3 className='productDetails'>{details}</h3>
-              <div>
-                <h1>Choose a color</h1>
+              <div className='colorSelection'>
+                <h1 className='productSelection'>Choose a color</h1>
                 <select value={color} onChange={e => setColor(e.target.value)}>
                   <option value={''}> --- </option>
                   <option value={'Black'}>Black</option>
@@ -69,21 +70,21 @@ const Product = (props) => {
                   <option value={'Robin Egg Blue'}>Robin Egg Blue</option>
                 </select>
               </div>
-              <div>
-                <h1>Delivery or Pickup</h1>
+              <div className='deliverySelection'>
+                <h1 className='productSelection'>Delivery or Pickup</h1>
                 <select value={deliveryOrPickup} onChange={e => setDeliveryOrPickup(e.target.value)}>
                   <option value={''}> --- </option>
                   <option value={'Pickup'}>Pickup</option>
                   <option value={'Delivery'}>Free Delivery to South Salt Lake County</option>
                 </select>
               </div>
-              <div>
-                <h1>Custom Details</h1>
+              <div className='customDetails'>
+                <h1 className='productSelection'>Custom Details</h1>
                 <input value={customDetails} onChange={e => setCustomDetails(e.target.value)}></input>
               </div>    
               <div className='productButtons'>
                 <Link to={'/all-products'} >
-                  <button >Back to All Products</button>
+                  <button className='button'>Back to All Products</button>
                 </Link>
               <StripeCheckout 
                 token={onToken}

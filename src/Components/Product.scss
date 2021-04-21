@@ -1,0 +1,74 @@
+@use '../sass';
+
+.single-product-box{
+  @include sass.flexCenterRelative(column);
+  top: 10vh;
+  height: auto;
+  background-color: sass.$blue;
+}
+.productContent{
+  @include sass.flexCenterRelative(column);
+  width: 100vw;
+}
+.productInfo{
+  @include sass.flexCenterRelative(column);
+  width: 90vw;
+  margin: 25px;
+  /* padding: 15px; */
+  background-color: white;
+  @include sass.productTag;
+}
+.productImage{
+  padding: 15px;
+  width: 330px;
+  height: auto;
+}
+.productDetails{
+  @include sass.pTexts;
+  width: 90vw;
+  padding: 10px;
+}
+.productPrice{
+  @include sass.flexCenterRelative(column);
+  @include sass.pTexts;
+  margin: 0px;
+  font-size: 19px;
+}
+.productName{
+  @include sass.title;
+}
+.colorSelection{
+  @include sass.flexCenterRelative(column);
+  margin-bottom: 10px;
+}
+.deliverySelection{
+  @include sass.flexCenterRelative(column);
+  margin-bottom: 10px;
+}
+.customDetails{
+  @include sass.flexCenterRelative(column);
+  margin-bottom: 10px;
+}
+.productSelection{
+  @include sass.flexCenterRelative(column);
+  @include sass.pTexts;
+  font-size: 18px;
+  margin: 0px;
+}
+select{
+  @include sass.selections;
+}
+input{
+  display: flex;
+  flex-wrap: wrap;
+  @include sass.selections;
+}
+.button{
+  @include sass.button(18px);
+  background-color: sass.$orange;
+  &:hover{
+    background-color: white;
+    border: solid sass.$darkOrange;
+  }
+
+}
