@@ -7,20 +7,20 @@
   z-index: 1;
   background-color: white;
 }
-.loginLogo{
+.rloginLogo{
   @include sass.flexCenterRelative(row);
   @include sass.title;
 
   margin: 10px;
 }
-.login{
+.rlogin{
   @include sass.flexCenterRelative(column);
   height: 100vh;
   width: 100vw;
   background-color: white;
   z-index: 1;
 }
-.loginContainer{
+.rloginContainer{
   @include sass.flexCenterRelative(column);
   height: 400px;
   width: 310px;
@@ -80,18 +80,18 @@ p{
 }
 
 @media (min-width: 700px){
-  .loginContainer{
+  .rloginContainer{
     height: 600px;
     width: 600px;
   }
-  .loginLogo{
+  .rloginLogo{
     font-size: 40px;
   }
   .registerBox{
     height: 650px;
   }
   .register-input-box{
-    width: 450px;
+    width: 420px;
   }
   p{
     font-size: 25px;
@@ -107,5 +107,20 @@ p{
 }
 
 @media (min-width: 1200px){
-  
+  .rloginLogo{
+    font-size: 50px;
+    font-weight: 400 ;
+  }
+  .rloginContainer{
+    height: 700px;
+    width: 750px;
+  }
+  .registerButton{
+    height: 50px;
+    width: 220px;
+    font-size: 30px;
+  }
+  p{
+    font-size: 35px;
+  }
 }

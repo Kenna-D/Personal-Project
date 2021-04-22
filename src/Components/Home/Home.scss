@@ -5,12 +5,17 @@
   display: flex;
   flex-direction: column;
   height: auto;
-  // top: 10vh;
+}
+.homePage2{
+  position: relative;
+  top: 10vh;
+
 }
 .openingLogo{
   @include sass.flexCenterRelative(column);
   height: 450px;
   @include sass.backgroundImage('https://cdn.pixabay.com/photo/2016/11/29/08/02/furniture-1868274__340.jpg', 120vw 450px);
+  background-position: center;
   opacity: .7;
 }
 .h1{
@@ -35,23 +40,19 @@
   opacity: .85;
 }
 .filler{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include sass.flexCenterRelative(column);
   justify-content: space-around;
   height: auto;
   width: 100vw;
 }
 .whatWeDoImage{
-  // @include sass.flexCenterRelative(column);
-
   width: 100vw;
   height: auto;
 }
 .homeImage{
-  height: 550px;
-  @include sass.backgroundImage('https://previews.dropbox.com/p/thumb/ABIdOG5sEfEilBYLtXzpMBSHseRL33kEiYhVLaEh9WJvXx1s6JhNpPyvoJX0_NpPGHo2xPRqZ4nbwMeeeRnnI3RG8NIgE4018BXDo9Gq1VpH-qdI7DP2EaF621Qb_VKCUbnG2AU6Z59eR7HXqLIWh_ZCa_TscTLv3yYz3yJ2eh1DTactmsjgpz7oyBIyCI3WoXm44ARj_Nwi_eDR0-YMM-iMh5gvWleJGUD1PAtI9QVIx3T5_zcpmcP05pF58BNYLWC2Bw6ajhT157eyWLj04fC4duHokZCJkMA1fe7DguMzo5lWoeWt9Kpw2jujB4p7PKNaIOjtwV7WNwwK_aa4wrMp_KWjvKYziCjfQdfc92yH4A/p.jpeg?fv_content=true&size_mode=5', 100vw 550px);
+  height: 530px;
+  @include sass.backgroundImage('https://previews.dropbox.com/p/thumb/ABIdOG5sEfEilBYLtXzpMBSHseRL33kEiYhVLaEh9WJvXx1s6JhNpPyvoJX0_NpPGHo2xPRqZ4nbwMeeeRnnI3RG8NIgE4018BXDo9Gq1VpH-qdI7DP2EaF621Qb_VKCUbnG2AU6Z59eR7HXqLIWh_ZCa_TscTLv3yYz3yJ2eh1DTactmsjgpz7oyBIyCI3WoXm44ARj_Nwi_eDR0-YMM-iMh5gvWleJGUD1PAtI9QVIx3T5_zcpmcP05pF58BNYLWC2Bw6ajhT157eyWLj04fC4duHokZCJkMA1fe7DguMzo5lWoeWt9Kpw2jujB4p7PKNaIOjtwV7WNwwK_aa4wrMp_KWjvKYziCjfQdfc92yH4A/p.jpeg?fv_content=true&size_mode=5', 100vw auto);
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -64,9 +65,11 @@
 }
 .whatWeDoText{
   @include sass.flexCenterRelative(column);
-  // background-color: sass.$blue;
 }
 .h3Text{
+  @include sass.pTexts;
+}
+.h3TextA{
   @include sass.pTexts;
 }
 
@@ -87,9 +90,96 @@
   width: 100vw;
   height: auto;
 }
+.AUImage{
+  height: 560px;
+  @include sass.backgroundImage('https://previews.dropbox.com/p/thumb/ABJazWPHbJ65T5vwKhpKqMpp_KrhacPC7OKaqlr-_6GvKLV6JDT6GNokTA01xj8WOPyXSm5tFwrTHIX1-x4pg9q1ahj2cxR96eCG6WXS8WIj1CEi8WyJIAeZgbQu1BmXm9NverzOF28P1sVWOhhTM0RzxUqBNYtHxtEe-jy3ragqpfqft5tknMB24ae-hcp5fXk5Nk_MsrZsUP4O0GxSMnnHYIhm_X_ZwVHVp-0BrGxHgK8TUd0c7_4SLn1fUWeP-r3AZ_CFyDTxvNbLvMNSLOFvKr8yXyo3h1o88PKv6YqeOOw_QaUszEizXUBj-zAnu_lajg_oRjyuCI1LR1zjeZWxHcVID7_-sopddvk_07EWlwIKM8RJxhn86j3hJaR7V31cHCREVdMd1cYdKDtDYwiPyDshDZ1s0EdGXpqySkNyKw/p.jpeg?fv_content=true&size_mode=5', 100vw auto);
+  background-position: center;
+}
 .aboutFiller{
   @include sass.flexCenterRelative(column-reverse);
 }
-// .homeImg{
-//   height: 300px;
-// }
+
+@media (min-width: 700px){
+  .openingLogo{
+    height: 520px;
+    background-size: 110vw auto;
+    opacity: .8;
+  }
+  .filler{
+    margin: 15px;
+    flex-direction: row;
+  }
+  .whatWeDoImage{
+    width: 47vw;
+  }
+  .homeImage{
+    background-size: 50vw auto;
+    border-radius: 6px;
+    width: 50vw;
+  }
+  .whatWeDoText{
+    width: 47vw;
+  }
+  .h3Text{
+    height: auto;
+    width: 50vw;
+    padding: 20px;
+    font-size: 20px;
+  }
+  .h3TextA{
+    padding: 10px;
+    font-size: 20px;
+  }
+  .allButton{
+    margin: 20px;
+  }
+  .aboutFiller{
+    margin: 15px;
+  }
+  .AUImage{
+    height: 600px;
+    background-position-y: -300px;
+    background-size: 96vw auto;
+  }
+  .aboutUsText{
+    width: 97vw;
+    font-size: 25px;
+  }
+}
+@media (min-width: 1200px){
+  .openingLogo{
+    height: 90vh;
+    opacity: .85;
+  }
+  .h1{
+    font-size: 50px;
+  }
+  .whatWeDoImage{
+    height: 700px;
+  }
+  .homeImage{
+    height: 700px;
+    background-size: auto 700px;
+    border-radius: 56px;
+  }
+  .whatWeDoTitle{
+    font-size: 40px;
+  }
+  .h3Text{
+    font-size: 25px;
+  }
+  .allButton{
+    height: 40px;
+    width: 250px;
+    font-size: 21px;
+  }
+  .aboutUsTitle{
+    font-size: 40px;
+  }
+  .AUImage{
+    background-position-y: -500px;
+  }
+  .h3TextA{
+    font-size: 25px;
+  }
+}

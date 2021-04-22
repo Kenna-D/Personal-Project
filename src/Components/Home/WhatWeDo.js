@@ -11,7 +11,7 @@ class WhatWeDo extends Component {
           <div className='whatWeDoImage'>
             <div className='homeImage'>
               <Link to='all-products' >
-                <button className='allButton'>Shop all products Here</button>
+                <button className='allButton'>Shop all products HERE</button>
               </Link>
             </div>
             

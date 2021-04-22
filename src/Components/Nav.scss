@@ -10,6 +10,7 @@ header {
   align-items: center;
   z-index: 2;
   box-shadow: sass.$boxShadow;
+  font-family: sass.$font;
 }
 .logo {
   position: relative;
@@ -18,11 +19,8 @@ header {
 .homeNav {
   position: absolute;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   width: 100vw;
-  /* right: 0px; */
-  // left: 88vw;
 }
 .loginLink{
   margin-right: 20px;
@@ -48,13 +46,11 @@ header {
   display: none;
 }
 .open {
-  /* padding-left: 10vw; */
   background-color: white;
   width: 100vw;
   position: fixed;
   left: 0;
   top: 10vh;
-  /* box-shadow: 0px 0px 8px -4px #000000; */
   z-index: 3;
 }
 li{

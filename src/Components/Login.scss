@@ -28,9 +28,10 @@
   height: 270px;
 }
 .loginLogo{
-  position: relative;
-  display: flex;
-  font-size: 30px;
+  @include sass.flexCenterRelative(row);
+  @include sass.title;
+
+  margin: 10px;
 }
 .loginInputBox{
   @include sass.flexCenterRelative(column);
@@ -69,33 +70,61 @@
 }
 
 @media (min-width: 700px){
+  .loginLogo{
+    font-size: 40px;
+  }
+  .loginContainer{
+    height: 600px;
+    width: 600px;
+  }
   .loginBox{
+    // background-color: salmon;
     height:500px;
   }
   .loginButton{
     height: 50px;
     width: 200px;
-    font-size: 25px;
+    font-size: 28px;
   }
   .loginInputBox{
+    // background-color: steelblue;
     height: 250px;
-    width: 300px;
+    width: 200px;
+    margin-bottom: 50px;
   }
   .login-input-box{
-    width: 450px;
+    // background-color: royalblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
   }
   .input{
     width: 300px;
   }
   .link{
-    font-size: 20px;
+    font-size: 25px;
   }
   .login-buttons{
+    top: 50px;
     height: 100px;
     width: 400px;
   }
 }
 
 @media (min-width: 1200px){
-  
+  .loginLogo{
+    font-size: 50px;
+    font-weight: 400;
+  }
+  .loginContainer{
+    height: 700px;
+    width: 750px;
+  }
+  .loginButton{
+    height: 60px;
+    width: 240px;
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
 }

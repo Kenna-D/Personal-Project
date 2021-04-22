@@ -39,10 +39,10 @@ const Register = (props) => {
   };
 
   return(
-    <div className='login'>
-      <div className='loginContainer'>
+    <div className='rlogin'>
+      <div className='rloginContainer'>
         <div className='registerBox'>
-          <h1 className='loginLogo'>Register</h1>
+          <h1 className='rloginLogo'>Register</h1>
           {errorMsg && <h3>{errorMsg}<span onClick={removeErrorMsg}>X</span></h3>}
           <div className='registerinputBox'>
             <div className='register-input-box'>
