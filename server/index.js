@@ -6,6 +6,7 @@ const express = require('express'),
       paymentCtrl = require('./controllers/payments');
 const massive = require('massive');
 const session = require('express-session');
+const path = require('path');
 
 const {CONNECTION_STRING, SERVER_PORT, SESSION_SECRET} = process.env;
 
@@ -40,6 +41,14 @@ app.delete('/api/orders/delete/:id', ordersCtrl.deleteOrder);
 //Payment Endpoint
 app.post('/api/payment', paymentCtrl.payment);
 // app.post('/api/orders/create', paymentCtrl.makeOrder);
+
+
+app.use(express.static(__dirname + '/../build'));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname,  '../build/index.html'));
+})
+
 
 massive({
   connectionString: CONNECTION_STRING,

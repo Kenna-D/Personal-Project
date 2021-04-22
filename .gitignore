@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 .env
 stripeKey.js
+.env.prod
 
 # dependencies
 /node_modules
