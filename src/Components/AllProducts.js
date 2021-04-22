@@ -19,8 +19,10 @@ const AllProducts = (props) => {
   
   let mappedProducts = products.map(product => {
     return <div key={product.product_id} className='productsInfo'>
-      <img src={product.image} alt={product.name} className='productsImages'/>
-      <Link to={`/product/${product.product_id}`} className='link' >
+      <Link to={`/product/${product.product_id}`} className='toProductLink' >
+      <div className='productImageBack'>
+        <img src={product.image} alt={product.name} className='productsImages'/>
+      </div>
       <h2 className='productsName'>{product.name}</h2>        
       </Link>
       <h4 className='productsPrice'>${product.price}</h4>

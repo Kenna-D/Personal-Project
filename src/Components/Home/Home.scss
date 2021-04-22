@@ -68,9 +68,11 @@
 }
 .h3Text{
   @include sass.pTexts;
+  text-align: center;
 }
 .h3TextA{
   @include sass.pTexts;
+  text-align: center;
 }
 
 

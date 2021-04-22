@@ -1,53 +1,100 @@
 @use '../sass';
 
-.allProduct{
+.allProduct {
   @include sass.flexCenterRelative(column);
   width: 100vw;
   top: 10vh;
   background-color: sass.$orange;
-  opacity: .85;
+  opacity: 0.85;
 }
-.productsLabel{
+.productsLabel {
   @include sass.flexCenterRelative(row);
   @include sass.title;
 }
-.colorOptions{
+.colorOptions {
   @include sass.flexCenterRelative(column);
   @include sass.pTexts;
   background-color: white;
   padding: 10px;
   @include sass.productTag;
 }
-.productsImages{
+.productsImages {
   padding: 15px;
   width: 330px;
   height: auto;
 }
-.all-products-body{
+.all-products-body {
   @include sass.pTexts;
   margin: 0;
 }
-.productsInfo{
+.productsInfo {
   @include sass.flexCenterRelative(column);
   margin: 20px;
   background-color: white;
   @include sass.productTag;
 }
-.productsName{
+.productsName {
   @include sass.flexCenterRelative(column);
   @include sass.title;
-  height: 40px;
-  width: 70vw;
+  text-align: center;
+  width: 300px;
   flex-wrap: wrap;
 }
-.productsPrice{
+.toProductLink {
+  @include sass.flexCenterRelative(column);
+  @include sass.link;
+  width: 300px;
+}
+.productsPrice {
   position: relative;
   display: flex;
   margin-bottom: 10px;
   font-size: 20px;
 }
-.productsDetails{
+.productsDetails {
   @include sass.flexCenterRelative(column);
   padding: 10px;
   font-size: 17px;
+}
+
+@media (min-width: 700px) {
+  .productsLabel {
+    font-size: 40px;
+  }
+  .colorOptions {
+    font-size: 17.5px;
+  }
+  .all-products-body {
+    @include sass.flexCenterRelative(row);
+    flex-wrap: wrap;
+  }
+  .productsInfo {
+    width: 330px;
+    height: 400px;
+  }
+  .productsImages {
+    width: auto;
+    max-width: 310px;
+    max-height: 270px;
+    padding: 0px;
+  }
+  .productImageBack {
+    @include sass.flexCenterRelative(column);
+    height: 280px;
+    width: 310px;
+    // background-color: black;
+  }
+  .productsName {
+    font-size: 25px;
+    width: 300px;
+  }
+}
+@media (min-width: 1200px) {
+  .productsLabel {
+    font-size: 50px;
+    margin: 10px;
+  }
+  .colorOptions {
+    font-size: 20px;
+  }
 }

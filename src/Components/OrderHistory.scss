@@ -1,11 +1,15 @@
 @use '../sass';
 
-.orderHistory{
+.orderHistory {
   @include sass.flexCenterRelative(column);
   top: 10vh;
   width: 100vw;
 }
-.mappedOrders{
+.map {
+  @include sass.flexCenterRelative(column);
+  align-items: flex-start;
+}
+.mappedOrders {
   @include sass.productTag;
   @include sass.flexCenterRelative(column);
   @include sass.pTexts;
@@ -15,25 +19,69 @@
   width: 340px;
   margin: 10px;
 }
-.ordersTitle{
+.ordersTitle {
   @include sass.flexCenterRelative(column);
   @include sass.title;
 }
-.orderName{
-  font-size: 20px
+.orderName {
+  font-size: 20px;
 }
-.orderButtons{
+.orderButtons {
   @include sass.button(18px);
+  width: 130px;
   margin: 5px;
-  &:hover{
+  &:hover {
     background-color: white;
     border: solid sass.$blue;
   }
 }
-.noEdit{
+.noEditButtons {
   position: relative;
   display: flex;
 }
-.edit{
+.noEdit {
+  position: relative;
+  display: flex;
+}
+.edit {
   display: none;
+}
+
+@media (min-width: 700px) {
+  .ordersTitle {
+    font-size: 35px;
+  }
+  .orderName {
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .mappedOrders {
+    width: 690px;
+    border-radius: 3px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .noEdit {
+    flex-direction: column;
+  }
+  .noEditButtons {
+    flex-direction: column;
+    margin-left: 10px;
+  }
+}
+@media (min-width: 1200px) {
+  .ordersTitle {
+    font-size: 40px;
+    margin: 10px;
+  }
+  .mappedOrders {
+    width: 1170px;
+  }
+  .orderName {
+    font-size: 25px;
+  }
+  .map {
+    font-size: 17px;
+  }
 }

@@ -1,74 +1,121 @@
 @use '../sass';
 
-.single-product-box{
+.single-product-box {
   @include sass.flexCenterRelative(column);
   top: 10vh;
   height: auto;
   background-color: sass.$blue;
 }
-.productContent{
+.productContent {
   @include sass.flexCenterRelative(column);
   width: 100vw;
 }
-.productInfo{
+.productInfo {
   @include sass.flexCenterRelative(column);
   width: 90vw;
   margin: 25px;
-  /* padding: 15px; */
   background-color: white;
   @include sass.productTag;
 }
-.productImage{
+.productInfo2 {
+  @include sass.flexCenterRelative(column);
+}
+.productImage {
   padding: 15px;
   width: 330px;
   height: auto;
 }
-.productDetails{
+.productDetails {
   @include sass.pTexts;
   width: 90vw;
   padding: 10px;
+  text-align: center;
 }
-.productPrice{
+.productPrice {
   @include sass.flexCenterRelative(column);
   @include sass.pTexts;
   margin: 0px;
   font-size: 19px;
 }
-.productName{
+.productsNameSingle {
   @include sass.title;
 }
-.colorSelection{
+.Selection {
   @include sass.flexCenterRelative(column);
   margin-bottom: 10px;
 }
-.deliverySelection{
-  @include sass.flexCenterRelative(column);
-  margin-bottom: 10px;
-}
-.customDetails{
-  @include sass.flexCenterRelative(column);
-  margin-bottom: 10px;
-}
-.productSelection{
+.productSelection {
   @include sass.flexCenterRelative(column);
   @include sass.pTexts;
   font-size: 18px;
   margin: 0px;
 }
-select{
+select {
   @include sass.selections;
 }
-input{
+input {
   display: flex;
   flex-wrap: wrap;
   @include sass.selections;
 }
-.button{
+.button {
   @include sass.button(18px);
   background-color: sass.$orange;
-  &:hover{
+  &:hover {
     background-color: white;
     border: solid sass.$darkOrange;
   }
+}
 
+@media (min-width: 700px) {
+  .productInfo {
+    width: 95vw;
+  }
+  .productImage {
+    width: 500px;
+  }
+  .productsNameSingle {
+    font-size: 40px;
+  }
+  .productPrice {
+    font-size: 23px;
+  }
+  .productDetails {
+    font-size: 20px;
+    width: 85vw;
+  }
+  .Selection {
+    margin: 5px;
+  }
+  .productSelection {
+    font-size: 20px;
+    font-weight: 540;
+  }
+  .productButtons {
+    @include sass.flexCenterRelative(row);
+    justify-content: space-around;
+    height: 50px;
+    width: 350px;
+  }
+  .button {
+    height: 32px;
+    width: 200px;
+  }
+}
+@media (min-width: 1200px) {
+  .productInfo {
+    flex-direction: row;
+  }
+  .productImage {
+    width: 47vw;
+  }
+  .productInfo2 {
+    width: 47vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .productDetails {
+    width: 47vw;
+    font-size: 18px;
+  }
 }
