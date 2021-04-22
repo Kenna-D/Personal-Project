@@ -94,7 +94,7 @@
 }
 .AUImage{
   height: 560px;
-  @include sass.backgroundImage('https://previews.dropbox.com/p/thumb/ABJazWPHbJ65T5vwKhpKqMpp_KrhacPC7OKaqlr-_6GvKLV6JDT6GNokTA01xj8WOPyXSm5tFwrTHIX1-x4pg9q1ahj2cxR96eCG6WXS8WIj1CEi8WyJIAeZgbQu1BmXm9NverzOF28P1sVWOhhTM0RzxUqBNYtHxtEe-jy3ragqpfqft5tknMB24ae-hcp5fXk5Nk_MsrZsUP4O0GxSMnnHYIhm_X_ZwVHVp-0BrGxHgK8TUd0c7_4SLn1fUWeP-r3AZ_CFyDTxvNbLvMNSLOFvKr8yXyo3h1o88PKv6YqeOOw_QaUszEizXUBj-zAnu_lajg_oRjyuCI1LR1zjeZWxHcVID7_-sopddvk_07EWlwIKM8RJxhn86j3hJaR7V31cHCREVdMd1cYdKDtDYwiPyDshDZ1s0EdGXpqySkNyKw/p.jpeg?fv_content=true&size_mode=5', 100vw auto);
+  @include sass.backgroundImage('https://previews.dropbox.com/p/thumb/ABKhTQ1HWw5HchA8axbe-zhBn3A0oLfNf_vW1TG8JGR46nEAtrM4qiEe4zgZqHoLbCY9hnXGQcgd77ib4t9K7eGAHJGldoCmP3fCZb0vkR2Kv8r7fZu1iOySr24nekspnHiiFH7MwT4_GI-sj8-J--Ksl3SjX--DWQle0d7NW1y8AOL1P_X1hCIkspTzImD18Ov6yXyQVHbT1FBpcES6nbU80EbzJOCXy5owG7Bs3zu5DaE9f5s8rkoM7qc4wkv6NFuHP7VU0xj6xEXhXEkKBVVcoxTj5YkXCB7xNCguEMvmmC16a7PZYh-zciY975lEaUetPsufYVaD7Bg9TgflH1CaK5Z8XZJyB6XaofJtCvXs5PkymS8wBIcmhFwQYaeN_kNKi5pCGHMWkNbkwOdqn6U1NyiKsj6JvurG1OT_RFsktGmsBnfQ4-7vet5MOcUs0X8/p.jpeg?size=2048x1536&size_mode=3', 100vw auto);
   background-position: center;
 }
 .aboutFiller{
@@ -168,7 +168,9 @@
     font-size: 40px;
   }
   .h3Text{
+    margin-right: 50px;
     font-size: 25px;
+    background-color: sass.$grey;
   }
   .allButton{
     height: 40px;
@@ -182,6 +184,48 @@
     background-position-y: -500px;
   }
   .h3TextA{
+    width: 96vw;
+    background-color: sass.$grey;
     font-size: 25px;
   }
 }
+@media (min-width: 1400px){
+  .aboutFiller{
+    @include sass.flexCenterRelative(row);
+    width: 100vw;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .aboutUsText{
+    width: 47vw;
+    margin: 10px;
+    margin-right: 30px;
+  }
+  .h3TextA{
+    // font-size: 50px;
+    // position: relative;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    width: 47vw;
+  }
+  .AUImage{
+    height: 80vh;
+    width: 47vw;
+  }
+}
+// @media (min-width: 1600px){
+  
+//   .AUImage{
+//     background-position-y: -700px;
+//     width: 80vw;
+//     height: 80vh;
+//     margin-left: 10vw;
+//     margin-right: 10vw;
+//   }
+// }
+// @media (min-width: 1400px){
+//   .AUImage{
+//     background-position-y: -600px;
+//   }
+// }

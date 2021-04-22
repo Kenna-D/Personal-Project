@@ -38,7 +38,7 @@ const Nav =(props) => {
             <img src='https://image.flaticon.com/icons/png/128/545/545705.png' alt='Menu' className='menuIcon' onClick={handleClick}/>
           </div>
           <div>
-            <h1>Love Your Shelf</h1>
+            <h1 className='siteLogo'>Love Your Shelf</h1>
           </div>
           <div className='logout'>
             <img src='https://image.flaticon.com/icons/png/128/1286/1286853.png' alt='logout' className='logoutIcon' onClick={logout} />

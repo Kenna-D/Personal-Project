@@ -65,3 +65,25 @@ ul {
   animation-name: slide;
   animation-duration: .5s;
 }
+
+@media (min-width: 700px){
+  .siteLogo{
+    font-size: 25px;
+  }
+  .menuIcon{
+    margin-left: 20px;
+  }
+  .logoutIcon{
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 1200px){
+  .menuIcon{
+    margin-left: 25px;
+  }
+  .logoutIcon{
+    margin-right: 25px;
+  }
+  
+}
